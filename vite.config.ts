@@ -1,13 +1,21 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc"; // Or use "@vitejs/plugin-react", but not both
+import react from "@vitejs/plugin-react-swc"; // or just @vitejs/plugin-react
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  root: path.resolve(__dirname, "client"),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger(),
+  ].filter(Boolean),
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: "dist",
     emptyOutDir: true,
   },
   server: {
@@ -16,15 +24,6 @@ export default defineConfig(({ mode }) => ({
     fs: {
       strict: true,
       deny: ["**/.*"],
-    },
-  },
-  plugins: [
-    react(),
-    mode === "development" && componentTagger(),
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
     },
   },
 }));

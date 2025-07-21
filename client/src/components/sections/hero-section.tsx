@@ -23,14 +23,16 @@ const HeroSection = () => {
         {/* Call-to-Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20 animate-fadeInUp" style={{animationDelay: '0.4s'}}>
           <Button 
+            variant="hero"
             size="lg" 
-            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white rounded-full font-semibold shadow-md hover:scale-105 border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] transition-all duration-300"
+            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold shadow-md"
           >
             View Portfolio
           </Button>
           <Button 
+            variant="glass"
             size="lg" 
-            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-white/30 dark:bg-gray-800/30 backdrop-blur-lg border border-white/30 dark:border-gray-600/30 text-gray-800 dark:text-white rounded-full font-semibold hover:bg-white/40 dark:hover:bg-gray-700/50 hover:scale-105 transition-all duration-300"
+            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold"
           >
             Start a Project
           </Button>

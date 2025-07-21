@@ -78,7 +78,7 @@ const ServicesOverview = () => {
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full font-medium border-muted text-foreground hover:border-[#B8860B] hover:text-[#B8860B] dark:hover:border-[#FFD700] dark:hover:text-[#FFD700] transition-all"
+                className="w-full font-medium border-muted text-foreground bg-background hover:bg-background hover:border-[#B8860B] hover:text-[#B8860B] hover:shadow-[0_0_15px_rgba(184,134,11,0.3)] dark:hover:border-[#FFD700] dark:hover:text-[#FFD700] dark:hover:shadow-[0_0_15px_rgba(255,215,0,0.4)] transition-all duration-300"
               >
                 Learn More
               </Button>

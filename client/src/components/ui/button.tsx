@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_12px_hsl(var(--primary)/0.3)] transition-all duration-300",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground hover:shadow-[0_0_10px_rgba(255,255,255,0.2)] dark:hover:shadow-[0_0_10px_rgba(255,255,255,0.1)] transition-all duration-300",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:shadow-[0_0_10px_hsl(var(--secondary)/0.3)] transition-all duration-300",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        glass: "bg-white/10 backdrop-blur-lg border border-white/20 text-foreground hover:bg-white/20 hover:border-white/30 transition-all duration-300",
-        hero: "bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] transition-all duration-300",
+        glass: "bg-white/10 backdrop-blur-lg border border-white/20 text-foreground hover:bg-white/20 hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300",
+        hero: "bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white hover:scale-105 border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] transition-all duration-300",
         neon: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_20px_hsl(var(--primary)/0.5)] transition-all duration-300",
       },
       size: {

@@ -7,7 +7,7 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
-          <div className="space-y-10">
+          <div className="space-y-10 animate-fadeInLeft">
             <div>
               <h2 className="text-4xl md:text-5xl font-space font-bold mb-6">
                 Who <span className="gradient-text">We Are</span>
@@ -32,7 +32,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right: Image */}
-          <div className="relative">
+          <div className="relative animate-fadeInRight">
             <div className="glass-card p-6 sm:p-8 rounded-xl transform hover:scale-105 transition-transform duration-300 shadow-xl glow-elegant">
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"

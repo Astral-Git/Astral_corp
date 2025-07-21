@@ -177,6 +177,11 @@ const BrandAnalysisQuiz = () => {
                   size="lg"
                   variant="hero"
                   className="text-lg px-8 py-6 rounded-full hover:scale-105 transition-all duration-300"
+                  onClick={() => {
+                    document.getElementById('appointment-booking')?.scrollIntoView({ 
+                      behavior: 'smooth' 
+                    });
+                  }}
                 >
                   Get Your Brand Strategy
                 </Button>

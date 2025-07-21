@@ -22,8 +22,8 @@ const Home = () => {
       <TestimonialsSection />
       <CoreValuesSection />
       <BrandAnalysisQuiz />
-      <Newsletter />
       <AppointmentBooking />
+      <Newsletter />
       <Chatbot />
     </div>
   );

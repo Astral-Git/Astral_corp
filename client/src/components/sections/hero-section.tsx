@@ -9,22 +9,22 @@ const HeroSection = () => {
 
       <div className="relative z-10 text-center max-w-7xl mx-auto px-6 sm:px-8 pt-25 sm:pt-28 md:pt-32 pb-16">
         {/* Hero Heading */}
-        <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-space font-extrabold mb-6 leading-tight tracking-tight">
+        <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-space font-extrabold mb-6 leading-tight tracking-tight animate-fadeInUp">
           <span className="block">We build</span>
           <span className="gradient-text block">websites & brands</span>
           <span className="block text-gray-800 dark:text-white">that make an impact.</span>
         </h1>
 
         {/* Subheading */}
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto font-inter leading-relaxed">
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto font-inter leading-relaxed animate-fadeInUp" style={{animationDelay: '0.2s'}}>
           A creative studio specializing in web development and visual identity design.
         </p>
 
         {/* Call-to-Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20">
+        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20 animate-fadeInUp" style={{animationDelay: '0.4s'}}>
           <Button 
             size="lg" 
-            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white rounded-full font-semibold shadow-md hover:scale-105 hover:shadow-[0_0_30px_#FFD700] transition-all duration-300"
+            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white rounded-full font-semibold shadow-md hover:scale-105 border-2 border-transparent hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.8)] transition-all duration-300"
           >
             View Portfolio
           </Button>

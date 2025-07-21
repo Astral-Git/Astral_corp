@@ -86,7 +86,7 @@ const AppointmentBooking = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
+    <section id="appointment-booking" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute -z-10 top-1/4 left-10 w-64 h-64 bg-[#FFD700]/10 rounded-full blur-3xl animate-float" />
       <div className="absolute -z-10 bottom-1/4 right-10 w-48 h-48 bg-[#B8860B]/10 rounded-full blur-3xl animate-float-delayed" />

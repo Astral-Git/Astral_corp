@@ -5,7 +5,7 @@ import TestimonialsSection from "@/components/sections/testimonials";
 import AboutSection from "@/components/sections/about-section";
 import StatsSection from "@/components/sections/stats-section";
 import CoreValuesSection from "@/components/sections/core-values";
-import ContactFormSection from "@/components/sections/contact-form";
+import BrandAnalysisQuiz from "@/components/sections/brand-analysis-quiz";
 import ServicesOverview from "@/components/sections/services-overview";
 import Newsletter from "@/components/sections/newsletter";
 import AppointmentBooking from "@/components/sections/appointment-booking";
@@ -21,7 +21,7 @@ const Home = () => {
       <ServicesOverview />
       <TestimonialsSection />
       <CoreValuesSection />
-      <ContactFormSection />
+      <BrandAnalysisQuiz />
       <Newsletter />
       <AppointmentBooking />
       <Chatbot />

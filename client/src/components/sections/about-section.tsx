@@ -28,22 +28,15 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-space font-semibold">
-                Our Philosophy
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                We believe in the power of thoughtful design and clean code. Our team combines years of experience with fresh perspectives to create digital experiences that stand the test of time and make a lasting impact.
-              </p>
-            </div>
+
           </div>
 
           {/* Right: Image */}
           <div className="relative">
             <div className="glass-card p-6 sm:p-8 rounded-xl transform hover:scale-105 transition-transform duration-300 shadow-xl glow-elegant">
               <img
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=600&h=400&fit=crop"
-                alt="Our creative team collaborating"
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
+                alt="Professional team working on brand strategy"
                 className="w-full h-80 object-cover rounded-lg shadow-md"
               />
               <div className="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-[#B8860B] to-[#FFD700] rounded-full flex items-center justify-center animate-pulse-glow shadow-lg">

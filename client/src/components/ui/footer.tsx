@@ -136,7 +136,8 @@ const Footer = () => {
               <Button
                 type="submit"
                 disabled={isSubscribed}
-                className="w-full rounded-full bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white dark:bg-transparent dark:border-2 dark:border-[#FFD700] dark:text-[#FFD700] dark:hover:bg-[#FFD700] dark:hover:text-black transition-all duration-300"
+                variant="hero"
+                className="w-full rounded-full font-semibold"
               >
                 {isSubscribed ? "✨ Subscribed!" : "Subscribe"}
               </Button>

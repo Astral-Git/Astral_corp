@@ -111,6 +111,22 @@
   body {
     @apply bg-background text-foreground overflow-x-hidden;
   }
+
+  /* Button Edge Fix */
+  button {
+    transform-style: preserve-3d;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    outline: none;
+  }
+  
+  /* Prevent edge bleeding on hover transitions */
+  button:hover {
+    will-change: transform, box-shadow, border;
+  }
 }
 
 @layer utilities {

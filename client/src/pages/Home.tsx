@@ -8,6 +8,8 @@ import CoreValuesSection from "@/components/sections/core-values";
 import ContactFormSection from "@/components/sections/contact-form";
 import ServicesOverview from "@/components/sections/services-overview";
 import Newsletter from "@/components/sections/newsletter";
+import AppointmentBooking from "@/components/sections/appointment-booking";
+import Chatbot from "@/components/chatbot";
 
 const Home = () => {
   return (
@@ -18,10 +20,11 @@ const Home = () => {
       <AboutSection />
       <ServicesOverview />
       <TestimonialsSection />
-      <StatsSection />
       <CoreValuesSection />
       <ContactFormSection />
       <Newsletter />
+      <AppointmentBooking />
+      <Chatbot />
     </div>
   );
 };

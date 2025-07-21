@@ -41,7 +41,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-[#f9fbff] dark:bg-[#0b0b0f] border-t border-gray-100 dark:border-[#6C63FF]/30">
+    <footer className="relative bg-[#f9fbff] dark:bg-black border-t border-gray-100 dark:border-[#FFD700]/30">
       {/* Light mode floating particles */}
       <div className="absolute inset-0 pointer-events-none dark:hidden">
         {Array.from({ length: 25 }, (_, i) => (
@@ -55,7 +55,7 @@ const Footer = () => {
               animationDuration: `${10 + Math.random() * 10}s`,
             }}
           >
-            <div className="w-2 h-2 bg-[#D9BBF9] rounded-full blur-sm" />
+            <div className="w-2 h-2 bg-[#FFD700] rounded-full blur-sm" />
           </div>
         ))}
       </div>
@@ -97,7 +97,7 @@ const Footer = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-700 dark:text-gray-300 hover:text-[#6C63FF] dark:hover:text-[#FF6EC7] transition-colors relative group"
+                    className="text-sm text-gray-700 dark:text-gray-300 hover:text-[#B8860B] dark:hover:text-[#FFD700] transition-colors relative group"
                   >
                     {link.label}
                   </Link>
@@ -131,12 +131,12 @@ const Footer = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="w-full rounded-full px-5 py-3 bg-white/60 dark:bg-transparent dark:border dark:border-[#6C63FF]/30 dark:focus:border-[#FF6EC7] backdrop-blur-md text-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#6C63FF]/30 transition-all duration-300"
+                className="w-full rounded-full px-5 py-3 bg-white/60 dark:bg-transparent dark:border dark:border-[#FFD700]/30 dark:focus:border-[#FFD700] backdrop-blur-md text-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#B8860B]/30 transition-all duration-300"
               />
               <Button
                 type="submit"
                 disabled={isSubscribed}
-                className="w-full rounded-full bg-gradient-to-r from-[#6C63FF] to-[#D9BBF9] text-white dark:bg-transparent dark:border-2 dark:border-[#FF6EC7] dark:text-[#FF6EC7] dark:hover:bg-[#FF6EC7] dark:hover:text-black transition-all duration-300"
+                className="w-full rounded-full bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white dark:bg-transparent dark:border-2 dark:border-[#FFD700] dark:text-[#FFD700] dark:hover:bg-[#FFD700] dark:hover:text-black transition-all duration-300"
               >
                 {isSubscribed ? "✨ Subscribed!" : "Subscribe"}
               </Button>
@@ -152,7 +152,7 @@ const Footer = () => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="w-10 h-10 rounded-full bg-gray-100 dark:bg-[#1F1F1F] flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#292929] hover:text-[#6C63FF] dark:hover:text-[#FF6EC7] transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-gray-100 dark:bg-[#1F1F1F] flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#292929] hover:text-[#B8860B] dark:hover:text-[#FFD700] transition-all duration-300"
               >
                 <social.icon size={18} />
               </a>

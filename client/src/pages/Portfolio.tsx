@@ -35,7 +35,7 @@ const projects: Project[] = [
     
   },
   {
-    id: 10,
+    id: 8,
     title: "Portfolio Website",
     description: "Personal portfolio showcasing projects, skills, and achievements with a clean, responsive design.",
     category: "Web Development",
@@ -130,7 +130,7 @@ const projects: Project[] = [
     clientQuote: "The visuals brought our brand to life — energetic, emotional, and unmistakably Coca-Cola!"
   },
   {
-    id: 8,
+    id: 9,
     title: "Ice Cream Marketing Design - BOGO Offer",
     description: "Eye-catching promotional design for a 'Buy One Get One Free' ice cream campaign aimed at summer crowds.",
     category: "Marketing",
@@ -145,7 +145,7 @@ const projects: Project[] = [
   
   
   {
-    id: 9,
+    id: 12,
     title: "So Juice Ads Design",
     description: "Fresh and vibrant advertising design for So Juice’s healthy fruit beverage line.",
     category: "Marketing",

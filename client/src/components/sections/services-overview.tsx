@@ -9,25 +9,25 @@ import {
 const ServicesOverview = () => {
   const services = [
     {
-      icon: <GlobeAltIcon className="w-10 h-10 text-[#6C63FF] dark:text-[#D9BBF9]" />,
+      icon: <GlobeAltIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "Web Development",
       description: "E-Commerce, APIs, CMS, Hosting, SEO",
       features: ["React & Next.js", "Custom APIs", "E-commerce Solutions", "SEO Optimization"],
     },
     {
-      icon: <PaintBrushIcon className="w-10 h-10 text-[#6C63FF] dark:text-[#D9BBF9]" />,
+      icon: <PaintBrushIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "UI/UX Design",
       description: "Branding, UI/UX, Social Creatives",
       features: ["User Experience", "Brand Identity", "Social Media Graphics", "Prototyping"],
     },
     {
-      icon: <ChartBarIcon className="w-10 h-10 text-[#6C63FF] dark:text-[#D9BBF9]" />,
+      icon: <ChartBarIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "Digital Marketing",
       description: "Ads, Email Marketing, SEO",
       features: ["Google Ads", "Email Campaigns", "Social Media", "Analytics"],
     },
     {
-      icon: <CubeIcon className="w-10 h-10 text-[#6C63FF] dark:text-[#D9BBF9]" />,
+      icon: <CubeIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "3D & IoT Engineering",
       description: "CAD Modeling & Product Engineering",
       features: ["3D Modeling", "IoT Solutions", "Product Design", "Prototyping"],
@@ -35,7 +35,7 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section className="py-24 bg-background dark:bg-[#0B0B0F]">
+    <section className="py-24 bg-background dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -69,7 +69,7 @@ const ServicesOverview = () => {
               <ul className="text-sm space-y-2 mb-6">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center text-muted-foreground">
-                    <span className="w-2 h-2 mr-2 rounded-full bg-gradient-to-br from-[#6C63FF] to-[#D9BBF9]"></span>
+                    <span className="w-2 h-2 mr-2 rounded-full bg-gradient-to-br from-[#B8860B] to-[#FFD700]"></span>
                     {feature}
                   </li>
                 ))}
@@ -78,7 +78,7 @@ const ServicesOverview = () => {
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full font-medium border-muted text-foreground hover:border-[#6C63FF] hover:text-[#6C63FF] dark:hover:border-[#FF6EC7] dark:hover:text-[#FF6EC7] transition-all"
+                className="w-full font-medium border-muted text-foreground hover:border-[#B8860B] hover:text-[#B8860B] dark:hover:border-[#FFD700] dark:hover:text-[#FFD700] transition-all"
               >
                 Learn More
               </Button>

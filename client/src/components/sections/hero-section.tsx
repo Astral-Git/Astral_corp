@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#f7faff] to-white dark:from-[#0B0B0F] dark:via-[#1a1a2e] dark:to-[#0B0B0F]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#f7faff] to-white dark:from-black dark:via-[#1a1a1a] dark:to-black">
       <FloatingShapes />
 
       <div className="relative z-10 text-center max-w-7xl mx-auto px-6 sm:px-8 pt-25 sm:pt-28 md:pt-32 pb-16">
@@ -24,7 +24,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20">
           <Button 
             size="lg" 
-            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#6C63FF] to-[#D9BBF9] text-white rounded-full font-semibold shadow-md hover:scale-105 hover:shadow-[0_0_30px_#D9BBF9] transition-all duration-300"
+            className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white rounded-full font-semibold shadow-md hover:scale-105 hover:shadow-[0_0_30px_#FFD700] transition-all duration-300"
           >
             View Portfolio
           </Button>

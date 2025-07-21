@@ -38,7 +38,7 @@ const CoreValuesSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden dark:bg-[#0B0B0F]">
+    <section className="py-24 relative overflow-hidden dark:bg-black">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -60,7 +60,7 @@ const CoreValuesSection = () => {
                 className="bg-white/5 dark:bg-white/10 border-white/10 dark:border-white/10 backdrop-blur-xl"
               >
                 <div className="flex flex-col space-y-4">
-                  <Icon className="w-10 h-10 text-[#6C63FF] dark:text-[#D9BBF9]" />
+                  <Icon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />
                   <h3 className="text-xl font-space font-semibold text-gray-900 dark:text-white">
                     {value.title}
                   </h3>
@@ -74,8 +74,8 @@ const CoreValuesSection = () => {
         </div>
 
         {/* Background Blurs */}
-        <div className="absolute -z-10 top-1/4 left-10 w-64 h-64 bg-[#D9BBF9]/10 rounded-full blur-3xl" />
-        <div className="absolute -z-10 bottom-1/4 right-10 w-48 h-48 bg-[#FF6EC7]/10 rounded-full blur-3xl" />
+        <div className="absolute -z-10 top-1/4 left-10 w-64 h-64 bg-[#FFD700]/10 rounded-full blur-3xl" />
+        <div className="absolute -z-10 bottom-1/4 right-10 w-48 h-48 bg-[#B8860B]/10 rounded-full blur-3xl" />
       </div>
     </section>
   );

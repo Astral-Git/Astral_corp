@@ -32,7 +32,7 @@ const ThemeToggle = () => {
     >
       <span className="transition-transform duration-300">
         {darkMode ? (
-          <Moon size={18} className="text-white/90 dark:text-[#FF6EC7]" />
+          <Moon size={18} className="text-white/90 dark:text-[#FFD700]" />
         ) : (
           <Sun size={18} className="text-[#0B0B0F] dark:text-white/90" />
         )}

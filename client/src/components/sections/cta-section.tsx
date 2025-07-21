@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-neon-purple/10 via-neon-blue/10 to-neon-pink/10">
+    <section className="py-20 bg-gradient-to-r from-[#B8860B]/10 via-[#FFD700]/10 to-[#FFA500]/10">
       <div className="container mx-auto px-4 text-center">
         <div className="glass-card p-12 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-space font-bold mb-6">

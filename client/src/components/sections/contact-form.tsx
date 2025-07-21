@@ -65,7 +65,7 @@ const ContactFormSection = () => {
   }
 
   return (
-    <section className="py-20 relative overflow-hidden bg-gradient-to-r dark:bg-[#0B0B0F]">
+    <section className="py-20 relative overflow-hidden bg-gradient-to-r dark:bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-space font-bold mb-6 text-gray-800 dark:text-white">
@@ -89,7 +89,7 @@ const ContactFormSection = () => {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]/50 dark:focus:ring-[#FF6EC7]/50 transition-all duration-300"
+                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50 dark:focus:ring-[#FFD700]/50 transition-all duration-300"
                   placeholder="Full Name *"
                 />
               </div>
@@ -101,7 +101,7 @@ const ContactFormSection = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]/50 dark:focus:ring-[#FF6EC7]/50 transition-all duration-300"
+                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50 dark:focus:ring-[#FFD700]/50 transition-all duration-300"
                   placeholder="Email Address *"
                 />
               </div>
@@ -114,7 +114,7 @@ const ContactFormSection = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]/50 dark:focus:ring-[#FF6EC7]/50 transition-all duration-300"
+                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50 dark:focus:ring-[#FFD700]/50 transition-all duration-300"
                   placeholder="Phone Number"
                 />
               </div>
@@ -125,7 +125,7 @@ const ContactFormSection = () => {
                   name="location"
                   value={formData.location}
                   onChange={handleInputChange}
-                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]/50 dark:focus:ring-[#FF6EC7]/50 transition-all duration-300"
+                  className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50 dark:focus:ring-[#FFD700]/50 transition-all duration-300"
                   placeholder="Location"
                 />
               </div>
@@ -138,7 +138,7 @@ const ContactFormSection = () => {
                 onChange={handleInputChange}
                 required
                 rows={6}
-                className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]/50 dark:focus:ring-[#FF6EC7]/50 transition-all duration-300 resize-none"
+                className="w-full bg-white/50 dark:bg-gray-800/30 backdrop-blur-lg border border-white/400 dark:border-gray-600/30 rounded-xl px-6 py-4 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50 dark:focus:ring-[#FFD700]/50 transition-all duration-300 resize-none"
                 placeholder="Project Description *"
               />
             </div>
@@ -147,7 +147,7 @@ const ContactFormSection = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-gradient-to-r from-[#6C63FF] to-[#D9BBF9] text-white hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] transition-all duration-300 rounded-full px-12 py-4 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)] transition-all duration-300 rounded-full px-12 py-4 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span className="flex items-center space-x-2">
@@ -163,8 +163,8 @@ const ContactFormSection = () => {
         </div>
 
         {/* Background decorative elements */}
-        <div className="absolute -z-10 top-1/4 left-10 w-48 h-48 bg-[#6C63FF]/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute -z-10 bottom-1/4 right-10 w-64 h-64 bg-[#D9BBF9]/10 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute -z-10 top-1/4 left-10 w-48 h-48 bg-[#B8860B]/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute -z-10 bottom-1/4 right-10 w-64 h-64 bg-[#FFD700]/10 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
     </section>
   );

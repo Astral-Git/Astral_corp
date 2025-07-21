@@ -6,47 +6,48 @@
 
 @layer base {
   :root {
-    /* Base colors */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Professional Black Theme - Light Mode Base */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 5%;
     
     /* Glass UI colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --glass: 0 0% 100% / 0.1;
-    --glass-border: 0 0% 100% / 0.2;
+    --card-foreground: 0 0% 5%;
+    --glass: 0 0% 100% / 0.08;
+    --glass-border: 0 0% 0% / 0.08;
     
-    /* Neon brand colors */
-    --neon-purple: 266 85% 77%;    /* #D9BBF9 */
-    --neon-blue: 239 84% 67%;      /* #6C63FF */
-    --neon-pink: 327 91% 70%;      /* #FF6EC7 */
-    --neon-white: 0 0% 100%;
+    /* Professional accent colors */
+    --accent-gold: 42 100% 70%;     /* Gold accent #FFD700 */
+    --accent-silver: 210 16% 82%;   /* Silver accent #C8CDD4 */
+    --accent-platinum: 200 8% 88%;  /* Platinum accent #E0E4E7 */
+    --accent-charcoal: 210 11% 15%; /* Charcoal #1F2937 */
     
     /* Semantic colors */
-    --primary: 239 84% 67%;         /* Neon blue */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 266 85% 77%;       /* Neon purple */
-    --secondary-foreground: 222.2 84% 4.9%;
-    --accent: 327 91% 70%;          /* Neon pink */
-    --accent-foreground: 0 0% 100%;
+    --primary: 0 0% 9%;             /* Near black */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 11% 15%;       /* Charcoal */
+    --secondary-foreground: 0 0% 98%;
+    --accent: 42 100% 70%;          /* Gold */
+    --accent-foreground: 0 0% 5%;
     
     /* UI colors */
-    --muted: 220 14% 96%;
+    --muted: 210 40% 95%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 239 84% 67%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 0 0% 9%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-blue)), hsl(var(--neon-pink)));
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-    --gradient-hero: linear-gradient(135deg, #ffffff 0%, #f7faff 100%);
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--accent-gold)), hsl(42 100% 60%));
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+    --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     
-    /* Shadows & glows */
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
-    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.3);
-    --shadow-pink-glow: 0 0 40px hsl(var(--neon-pink) / 0.4);
-    --shadow-blue-glow: 0 0 40px hsl(var(--neon-blue) / 0.4);
+    /* Professional Shadows */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.06);
+    --shadow-elegant: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-gold: 0 0 20px hsl(var(--accent-gold) / 0.3);
+    --shadow-charcoal: 0 4px 20px rgba(31, 41, 55, 0.15);
     
     --radius: 1rem;
 
@@ -68,39 +69,37 @@
   }
 
   .dark {
-    /* Dark mode base */
-    --background: 11 9% 6%;         /* Deep dark blue #0B0B0F */
-    --foreground: 210 40% 98%;
+    /* Professional Black Theme - Dark Mode */
+    --background: 0 0% 3%;          /* Near pure black */
+    --foreground: 0 0% 95%;
     
-    /* Dark glass UI */
-    --card: 11 9% 6%;
-    --card-foreground: 210 40% 98%;
-    --glass: 0 0% 0% / 0.3;
-    --glass-border: 255 255 255 / 0.1;
+    /* Professional Black Dark Glass UI */
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --glass: 0 0% 100% / 0.06;
+    --glass-border: 0 0% 100% / 0.12;
     
-    /* Enhanced neon in dark mode */
-    --primary: 239 84% 67%;          /* Bright neon blue */
-    --primary-foreground: 220 13% 9%;
-    --secondary: 266 85% 77%;        /* Bright neon purple */
-    --secondary-foreground: 220 13% 9%;
-    --accent: 327 91% 70%;           /* Bright neon pink */
-    --accent-foreground: 220 13% 9%;
+    /* Professional Dark Theme Colors */
+    --primary: 42 100% 70%;          /* Gold accent */
+    --primary-foreground: 0 0% 3%;
+    --secondary: 210 11% 25%;        /* Lighter charcoal */
+    --secondary-foreground: 0 0% 95%;
+    --accent: 42 100% 70%;           /* Gold */
+    --accent-foreground: 0 0% 3%;
     
     /* Dark UI colors */
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 239 84% 67%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 42 100% 70%;
     
-    /* Dark gradients */
-    --gradient-hero: linear-gradient(135deg, #0B0B0F 0%, #1a1a2e 100%);
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.6);
-    
-    /* Enhanced neon glows in dark mode */
-    --shadow-neon: 0 0 40px hsl(var(--primary) / 0.5);
-    --shadow-pink-glow: 0 0 50px hsl(var(--neon-pink) / 0.6);
-    --shadow-blue-glow: 0 0 50px hsl(var(--neon-blue) / 0.6);
+    /* Professional Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(42 100% 60%));
+    --gradient-hero: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-elegant: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-gold: 0 0 30px hsl(var(--accent-gold) / 0.5);
   }
 }
 
@@ -124,22 +123,22 @@
     @apply bg-white/[0.08] backdrop-blur-xl border border-white/[0.15] rounded-2xl;
   }
   
-  /* Neon glow effects */
-  .glow-blue {
-    box-shadow: 0 0 30px hsl(var(--neon-blue) / 0.3);
+  /* Professional glow effects */
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(var(--accent-gold) / 0.3);
   }
   
-  .glow-pink {
-    box-shadow: 0 0 30px hsl(var(--neon-pink) / 0.3);
+  .glow-elegant {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
   
-  .glow-purple {
-    box-shadow: 0 0 30px hsl(var(--neon-purple) / 0.3);
+  .glow-charcoal {
+    box-shadow: 0 0 20px rgba(31, 41, 55, 0.3);
   }
 
-  /* Gradient text */
+  /* Professional gradient text */
   .gradient-text {
-    @apply bg-gradient-to-r from-[#D9BBF9] via-[#6C63FF] to-[#FF6EC7] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#FFD700] to-[#FFA500] bg-clip-text text-transparent;
   }
   
   /* Floating animation */

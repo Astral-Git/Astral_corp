@@ -69,7 +69,7 @@ const processSteps = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen pt-16 bg-background text-foreground dark:bg-[#0B0B0F]">
+    <div className="min-h-screen pt-16 bg-background text-foreground dark:bg-black">
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
         <FloatingShapes />
@@ -86,12 +86,12 @@ const Services = () => {
       {/* Tabs */}
       <section className="py-20 max-w-6xl mx-auto px-4">
         <Tabs defaultValue="design">
-          <TabsList className="grid grid-cols-2 sm:grid-cols-4 gap-6 px-4 py-2 mb-20 rounded-xl bg-white dark:bg-[#0B0B0F] backdrop-blur">
+          <TabsList className="grid grid-cols-2 sm:grid-cols-4 gap-6 px-4 py-2 mb-20 rounded-xl bg-white dark:bg-black backdrop-blur">
             {services.map((service) => (
               <TabsTrigger
                 key={service.id}
                 value={service.id}
-                className="tab-trigger flex gap-2 px-3 py-3 data-[state=active]:bg-gradient-to-br data-[state=active]:from-neon-purple data-[state=active]:to-neon-blue data-[state=active]:text-white"
+                className="tab-trigger flex gap-2 px-3 py-3 data-[state=active]:bg-gradient-to-br data-[state=active]:from-[#B8860B] data-[state=active]:to-[#FFD700] data-[state=active]:text-white"
               >
                 {iconMap[service.id]}
                 <span className="text-sm sm:text-base">{service.title}</span>
@@ -118,7 +118,7 @@ const Services = () => {
                   <ul className="space-y-4 mb-8">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-3">
-                        <span className="w-3 h-3 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full" />
+                        <span className="w-3 h-3 bg-gradient-to-r from-[#B8860B] to-[#FFD700] rounded-full" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -129,7 +129,7 @@ const Services = () => {
                 </div>
 
                 {/* Right Card */}
-                <div className="glass-card p-6 sm:p-8 rounded-2xl glow-blue shadow-xl backdrop-blur border border-white/10 text-center hover:scale-105 transition-transform duration-300">
+                <div className="glass-card p-6 sm:p-8 rounded-2xl glow-elegant shadow-xl backdrop-blur border border-white/10 text-center hover:scale-105 transition-transform duration-300">
                   <div className="mb-6">{iconMap[service.id]}</div>
                   <h3 className="text-2xl font-space font-semibold mb-4 gradient-text">
                     Premium Quality
@@ -145,7 +145,7 @@ const Services = () => {
       </section>
 
       {/* Process */}
-      <section className="py-20 bg-muted/20 dark:bg-[#0B0B0F] max-w-6xl mx-auto px-4">
+      <section className="py-20 bg-muted/20 dark:bg-black max-w-6xl mx-auto px-4">
         <h2 className="text-3xl sm:text-4xl font-space font-bold text-center mb-16">
           Our <span className="gradient-text">Process</span>
         </h2>
@@ -159,7 +159,7 @@ const Services = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="glass-card p-6 rounded-2xl border border-white/10 backdrop-blur shadow-md group-hover:glow-blue hover:scale-105 transition-transform duration-300">
+              <div className="glass-card p-6 rounded-2xl border border-white/10 backdrop-blur shadow-md group-hover:glow-gold hover:scale-105 transition-transform duration-300">
                 <div className="text-2xl sm:text-3xl font-space font-bold gradient-text mb-2">
                   {phase.step}
                 </div>

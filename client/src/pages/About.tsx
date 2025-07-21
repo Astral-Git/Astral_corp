@@ -30,7 +30,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 bg-muted/20 dark:bg-[#0B0B0F]">
+      <section className="py-24 bg-muted/20 dark:bg-black">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl font-space font-bold mb-6">
@@ -49,7 +49,7 @@ const About = () => {
             </Button>
           </div>
 
-          <div className="glass-card p-8 glow-purple rounded-2xl shadow-xl backdrop-blur border border-white/10">
+          <div className="glass-card p-8 glow-elegant rounded-2xl shadow-xl backdrop-blur border border-white/10">
             <h3 className="text-2xl font-space font-semibold mb-4 gradient-text">
               Our Values
             </h3>
@@ -61,7 +61,7 @@ const About = () => {
                 "Beautiful, accessible experiences"
               ].map((value, index) => (
                 <li key={index} className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-gradient-to-r from-neon-purple to-neon-blue rounded-full"></div>
+                  <div className="w-3 h-3 bg-gradient-to-r from-[#B8860B] to-[#FFD700] rounded-full"></div>
                   <span className="text-foreground">{value}</span>
                 </li>
               ))}
@@ -71,7 +71,7 @@ const About = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 relative dark:bg-[#0B0B0F]">
+      <section className="py-24 relative dark:bg-black">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-space font-bold text-center mb-16">
             Our <span className="gradient-text">Journey</span>
@@ -79,7 +79,7 @@ const About = () => {
 
           <div className="relative max-w-5xl mx-auto">
             {/* Vertical center line on desktop */}
-            <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-neon-purple to-neon-blue z-0"></div>
+            <div className="hidden md:block absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#B8860B] to-[#FFD700] z-0"></div>
 
             {milestones.map((milestone, index) => {
               const isLeft = index % 2 === 0;
@@ -99,7 +99,7 @@ const About = () => {
                   {isLeft && (
                     <>
                       <div className="w-full md:w-1/2 px-4 md:pr-8">
-                        <div className="glass-card p-6 rounded-xl shadow-lg border border-white/10 backdrop-blur-md glow-blue hover:glow-pink transition-all duration-300">
+                        <div className="glass-card p-6 rounded-xl shadow-lg border border-white/10 backdrop-blur-md glow-elegant hover:glow-gold transition-all duration-300">
                           <span className="text-sm font-space gradient-text block mb-2">{milestone.year}</span>
                           <h3 className="text-xl font-space font-semibold mb-1 text-foreground">
                             {milestone.title}
@@ -116,7 +116,7 @@ const About = () => {
                     <>
                       <div className="hidden md:block w-1/2" />
                       <div className="w-full md:w-1/2 px-4 md:pl-8">
-                        <div className="glass-card p-6 rounded-xl shadow-lg border border-white/10 backdrop-blur-md glow-blue hover:glow-pink transition-all duration-300">
+                        <div className="glass-card p-6 rounded-xl shadow-lg border border-white/10 backdrop-blur-md glow-elegant hover:glow-gold transition-all duration-300">
                           <span className="text-sm font-space gradient-text block mb-2">{milestone.year}</span>
                           <h3 className="text-xl font-space font-semibold mb-1 text-foreground">
                             {milestone.title}
@@ -129,7 +129,7 @@ const About = () => {
 
                   {/* Mobile-only separator line */}
                   {index < milestones.length - 1 && (
-                    <div className="md:hidden w-1 mx-auto my-6 h-12 bg-gradient-to-b from-neon-purple to-neon-blue rounded-full" />
+                    <div className="md:hidden w-1 mx-auto my-6 h-12 bg-gradient-to-b from-[#B8860B] to-[#FFD700] rounded-full" />
                   )}
                 </motion.div>
               );

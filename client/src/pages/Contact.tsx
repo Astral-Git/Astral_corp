@@ -52,7 +52,7 @@ const Contact = () => {
       <section className="pb-24 px-4">
         <div className="max-w-7xl mx-auto grid gap-12 lg:grid-cols-2 items-start">
           {/* Contact Form */}
-          <div className="glass-card p-6 sm:p-8 glow-blue rounded-2xl">
+          <div className="glass-card p-6 sm:p-8 glow-elegant rounded-2xl">
             <h2 className="text-3xl font-space font-bold mb-6 gradient-text">
               Start Your Project
             </h2>

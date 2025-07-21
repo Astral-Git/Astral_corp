@@ -84,7 +84,7 @@ const ReviewCard = ({
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 bg-white dark:bg-[#0B0B0F]">
+    <section className="py-24 bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-center text-4xl md:text-5xl font-bold font-space mb-16 text-gray-900 dark:text-white">
           Loved by our <span className="gradient-text">community</span>
@@ -103,8 +103,8 @@ export default function TestimonialsSection() {
           </Marquee>
 
           {/* Fading edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-white dark:from-[#0B0B0F]"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-white dark:from-[#0B0B0F]"></div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-white dark:from-gray-900"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-white dark:from-gray-900"></div>
         </div>
       </div>
     </section>

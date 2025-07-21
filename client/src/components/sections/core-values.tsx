@@ -38,7 +38,7 @@ const CoreValuesSection = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden dark:bg-black">
+    <section className="py-24 relative overflow-hidden dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <FloatingShapes />

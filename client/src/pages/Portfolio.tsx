@@ -370,7 +370,7 @@ const Portfolio = () => {
   );
 
   return (
-    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none dark:hidden">
         {Array.from({ length: 30 }, (_, i) => (

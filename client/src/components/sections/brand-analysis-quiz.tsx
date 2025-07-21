@@ -105,7 +105,7 @@ const BrandAnalysisQuiz = () => {
     const scoreDescription = getScoreDescription(overallScore);
 
     return (
-      <section className="py-24 relative overflow-hidden dark:bg-black">
+      <section className="py-24 relative overflow-hidden dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -203,7 +203,7 @@ const BrandAnalysisQuiz = () => {
 
   if (isCompleted) {
     return (
-      <section className="py-24 relative overflow-hidden dark:bg-black">
+      <section className="py-24 relative overflow-hidden dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <motion.div
@@ -241,7 +241,7 @@ const BrandAnalysisQuiz = () => {
   const currentAnswer = answers[currentQ.id] || 5;
 
   return (
-    <section className="py-24 relative overflow-hidden dark:bg-black">
+    <section className="py-24 relative overflow-hidden dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Header */}

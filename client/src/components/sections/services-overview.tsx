@@ -35,7 +35,7 @@ const ServicesOverview = () => {
   ];
 
   return (
-    <section className="py-24 bg-background dark:bg-black">
+    <section className="py-24 bg-background dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

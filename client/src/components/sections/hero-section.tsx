@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#f7faff] to-white dark:from-black dark:via-[#1a1a1a] dark:to-black">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#f7faff] to-white dark:from-gray-900 dark:via-black dark:to-gray-900">
       <FloatingShapes />
 
       <div className="relative z-10 text-center max-w-7xl mx-auto px-6 sm:px-8 pt-25 sm:pt-28 md:pt-32 pb-16">

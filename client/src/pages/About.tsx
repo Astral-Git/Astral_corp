@@ -15,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 bg-background text-foreground">
+    <div className="min-h-screen pt-20 bg-background text-foreground dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <FloatingShapes />
@@ -30,7 +30,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 bg-muted/20 dark:bg-black">
+      <section className="py-24 bg-muted/20 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl font-space font-bold mb-6">
@@ -71,7 +71,7 @@ const About = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-24 relative dark:bg-black">
+      <section className="py-24 relative dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-space font-bold text-center mb-16">
             Our <span className="gradient-text">Journey</span>

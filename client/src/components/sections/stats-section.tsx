@@ -65,7 +65,7 @@ const StatsSection = () => {
   return (
 <section
   ref={sectionRef}
-  className="py-20 bg-gradient-to-r dark:bg-[#0B0B0F]"
+  className="py-20 bg-gradient-to-r dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900"
 >
 
       <div className="container mx-auto">

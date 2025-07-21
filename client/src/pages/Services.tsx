@@ -69,7 +69,7 @@ const processSteps = [
 
 const Services = () => {
   return (
-    <div className="min-h-screen pt-16 bg-background text-foreground dark:bg-black">
+    <div className="min-h-screen pt-16 bg-background text-foreground dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
         <FloatingShapes />
@@ -145,7 +145,7 @@ const Services = () => {
       </section>
 
       {/* Process */}
-      <section className="py-20 bg-muted/20 dark:bg-black max-w-6xl mx-auto px-4">
+      <section className="py-20 bg-muted/20 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900 max-w-6xl mx-auto px-4">
         <h2 className="text-3xl sm:text-4xl font-space font-bold text-center mb-16">
           Our <span className="gradient-text">Process</span>
         </h2>

@@ -13,7 +13,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-20 dark:bg-[#0B0B0F]">
+    <section className="py-20 dark:bg-gradient-to-br dark:from-gray-900 dark:via-black dark:to-gray-900">
       <div className="container mx-auto px-4">
         <div className="glass-card p-8 max-w-2xl mx-auto text-center border rounded-xl border-white/400 backdrop-blur-md shadow-lg">
           <h3 className="text-3xl font-space font-bold mb-4">

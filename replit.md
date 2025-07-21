@@ -23,6 +23,7 @@ A modern glassmorphic portfolio website featuring neon aesthetics, originally bu
 - **2025-01-21**: Linked all buttons and CTAs to appropriate pages or sections with smooth scrolling
 - **2025-01-21**: Enhanced stats section with more impressive and realistic business metrics
 - **2025-01-21**: Refined core values content to emphasize strategic business outcomes
+- **2025-01-21**: Applied consistent blue gradient backgrounds (`dark:from-gray-900 dark:via-black dark:to-gray-900`) across all sections in dark mode for visual consistency
 
 ## Project Architecture
 ### Frontend

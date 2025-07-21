@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "wouter";
 import { Home, Info, Layers, Image, Phone } from "lucide-react";
 import { Button } from "./button";
 import ThemeToggle from "../theme-toggle";
 
 const Navigation = () => {
-  const location = useLocation();
+  const [location] = useLocation();
 
   const navItems = [
     { href: "/", label: "Home", icon: <Home size={22} strokeWidth={1.8} /> },
@@ -15,7 +15,7 @@ const Navigation = () => {
     { href: "/contact", label: "Contact", icon: <Phone size={22} strokeWidth={1.8} /> },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => location === path;
 
   return (
     <>
@@ -24,7 +24,7 @@ const Navigation = () => {
         <div className="bg-white/60 dark:bg-[#0B0B0F]/70 backdrop-blur-md border border-white/20 dark:border-[#6C63FF]/20 rounded-full shadow-lg px-8 py-3 transition-all duration-300">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-3">
               <img src="favicon.ico" alt="Logo" className="w-9 h-9 object-contain" />
               <span className="hidden lg:block text-lg font-bold bg-gradient-to-r from-[#6C63FF] to-[#FF6EC7] bg-clip-text text-transparent font-space">
                 A.S.T.R.A.L Corp
@@ -36,7 +36,7 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  to={item.href}
+                  href={item.href}
                   className={`font-inter text-base font-medium relative group transition-all ${
                     isActive(item.href)
                       ? "text-[#6C63FF] dark:text-[#FF6EC7]"
@@ -69,7 +69,7 @@ const Navigation = () => {
       {navItems.slice(0, 4).map((item) => (
         <Link
           key={item.href}
-          to={item.href}
+          href={item.href}
           className={`p-3 rounded-full transition-all duration-300 ${
             isActive(item.href)
               ? "bg-gradient-to-tr from-[#6C63FF] to-[#D9BBF9] text-white shadow-md scale-105"
@@ -84,7 +84,7 @@ const Navigation = () => {
 
     {/* Contact Icon */}
     <Link
-      to="/contact"
+      href="/contact"
       className={`ml-2 p-3 rounded-full transition-all duration-300 ${
         isActive("/contact")
           ? "bg-gradient-to-tr from-[#6C63FF] to-[#D9BBF9] text-white shadow-md scale-105"

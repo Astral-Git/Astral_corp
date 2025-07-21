@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "wouter";
 import {
   Mail,
   Phone,
@@ -64,7 +64,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo & Contact */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <img src="/favicon.ico" className="w-9 h-9" />
               <span className="font-space text-xl font-bold text-gray-800 dark:text-white">
                 A.S.T.R.A.L Corp
@@ -96,7 +96,7 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    to={link.href}
+                    href={link.href}
                     className="text-sm text-gray-700 dark:text-gray-300 hover:text-[#6C63FF] dark:hover:text-[#FF6EC7] transition-colors relative group"
                   >
                     {link.label}

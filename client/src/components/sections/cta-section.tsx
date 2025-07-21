@@ -16,6 +16,12 @@ const CTASection = () => {
             size="lg" 
             variant="hero" 
             className="text-xl px-12 py-6 rounded-full hover:scale-105 transition-all duration-300"
+            onClick={() => {
+              const appointmentSection = document.getElementById('appointment-booking');
+              if (appointmentSection) {
+                appointmentSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             Start Your Project Today
           </Button>

@@ -11,26 +11,26 @@ const ServicesOverview = () => {
     {
       icon: <GlobeAltIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "Web Development",
-      description: "E-Commerce, APIs, CMS, Hosting, SEO",
-      features: ["React & Next.js", "Custom APIs", "E-commerce Solutions", "SEO Optimization"],
+      description: "Full-stack development with modern frameworks and scalable architecture",
+      features: ["React & Next.js", "Custom APIs", "E-commerce Solutions", "Performance Optimization"],
     },
     {
       icon: <PaintBrushIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "UI/UX Design",
-      description: "Branding, UI/UX, Social Creatives",
-      features: ["User Experience", "Brand Identity", "Social Media Graphics", "Prototyping"],
+      description: "Human-centered design that drives engagement and conversions",
+      features: ["User Research", "Interface Design", "Brand Strategy", "Design Systems"],
     },
     {
       icon: <ChartBarIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "Digital Marketing",
-      description: "Ads, Email Marketing, SEO",
-      features: ["Google Ads", "Email Campaigns", "Social Media", "Analytics"],
+      description: "Data-driven marketing strategies that deliver measurable ROI",
+      features: ["Search Marketing", "Content Strategy", "Social Media", "Analytics & Reporting"],
     },
     {
       icon: <CubeIcon className="w-10 h-10 text-[#B8860B] dark:text-[#FFD700]" />,
       title: "3D & IoT Engineering",
-      description: "CAD Modeling & Product Engineering",
-      features: ["3D Modeling", "IoT Solutions", "Product Design", "Prototyping"],
+      description: "Advanced engineering solutions for physical and connected products",
+      features: ["CAD Modeling", "IoT Development", "Product Engineering", "Rapid Prototyping"],
     },
   ];
 
@@ -43,7 +43,7 @@ const ServicesOverview = () => {
             Our <span className="gradient-text">Services</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Innovative solutions crafted for your digital success.
+            Comprehensive digital solutions designed to accelerate your business growth and market presence.
           </p>
         </div>
 
@@ -79,6 +79,7 @@ const ServicesOverview = () => {
                 variant="outline"
                 size="sm"
                 className="w-full font-medium border-muted text-foreground bg-background hover:bg-background hover:border-[#B8860B] hover:text-[#B8860B] hover:shadow-[0_0_15px_rgba(184,134,11,0.3)] dark:hover:border-[#FFD700] dark:hover:text-[#FFD700] dark:hover:shadow-[0_0_15px_rgba(255,215,0,0.4)] transition-all duration-300"
+                onClick={() => window.location.href = '/services'}
               >
                 Learn More
               </Button>

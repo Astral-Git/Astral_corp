@@ -14,10 +14,10 @@ const StatsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const stats = [
-    { key: "projects", label: "Projects Completed", target: 50, suffix: "+" },
-    { key: "years", label: "Years Experience", target: 5, suffix: "+" },
-    { key: "satisfaction", label: "Client Satisfaction", target: 100, suffix: "%" },
-    { key: "support", label: "Support Available", target: 24, suffix: "/7" },
+    { key: "projects", label: "Projects Delivered", target: 150, suffix: "+" },
+    { key: "years", label: "Years of Excellence", target: 8, suffix: "+" },
+    { key: "satisfaction", label: "Client Retention Rate", target: 95, suffix: "%" },
+    { key: "support", label: "Support Response Time", target: 2, suffix: "h" },
   ];
 
   useEffect(() => {

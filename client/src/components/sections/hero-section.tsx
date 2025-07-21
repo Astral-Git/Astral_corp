@@ -17,7 +17,7 @@ const HeroSection = () => {
 
         {/* Subheading */}
         <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto font-inter leading-relaxed animate-fadeInUp" style={{animationDelay: '0.2s'}}>
-          A creative studio specializing in web development and visual identity design.
+          Transforming visions into exceptional digital experiences through innovative web development, strategic brand design, and cutting-edge technology solutions.
         </p>
 
         {/* Call-to-Action Buttons */}
@@ -26,6 +26,7 @@ const HeroSection = () => {
             variant="hero"
             size="lg" 
             className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold shadow-md"
+            onClick={() => window.location.href = '/portfolio'}
           >
             View Portfolio
           </Button>
@@ -33,6 +34,12 @@ const HeroSection = () => {
             variant="glass"
             size="lg" 
             className="text-base sm:text-lg px-8 sm:px-10 py-3 sm:py-4 rounded-full font-semibold"
+            onClick={() => {
+              const appointmentSection = document.getElementById('appointment-booking');
+              if (appointmentSection) {
+                appointmentSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
             Start a Project
           </Button>

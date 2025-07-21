@@ -52,7 +52,16 @@ const Navigation = () => {
             {/* Theme Toggle + CTA */}
             <div className="flex items-center space-x-5">
               <ThemeToggle />
-              <Button className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white px-6 py-2 rounded-full font-semibold transition hover:shadow-[0_0_20px_#FFD700] dark:bg-transparent dark:border dark:border-[#FFD700] dark:text-[#FFD700] dark:hover:bg-[#FFD700] dark:hover:text-black">
+              <Button 
+                onClick={() => {
+                  const appointmentSection = document.getElementById('appointment-booking');
+                  if (appointmentSection) {
+                    appointmentSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                variant="hero" 
+                className="px-6 py-2 rounded-full font-semibold"
+              >
                 Let's Talk
               </Button>
             </div>

@@ -13,27 +13,27 @@ const CoreValuesSection = () => {
   const values = [
     {
       icon: Target,
-      title: "Innovation-driven design solutions",
+      title: "Strategic Innovation",
       description:
-        "We push creative boundaries to deliver unique solutions that set your brand apart.",
+        "We leverage cutting-edge technologies and methodologies to create solutions that drive competitive advantage and measurable business growth.",
     },
     {
       icon: Handshake,
-      title: "Transparent communication",
+      title: "Transparent Partnership",
       description:
-        "Clear, honest communication throughout every project phase keeps you informed and confident.",
+        "We maintain complete transparency in our processes, timelines, and costs, ensuring you have full visibility into project progress and decision-making.",
     },
     {
       icon: Clock,
-      title: "Deadline-focused delivery",
+      title: "Results-Driven Excellence",
       description:
-        "We respect your time and consistently deliver high-quality work when promised.",
+        "Our commitment to quality and deadline adherence ensures project success while maintaining the highest standards of technical and creative excellence.",
     },
     {
       icon: BookOpenCheck,
-      title: "Continuous learning & growth",
+      title: "Future-Ready Solutions",
       description:
-        "We stay ahead of trends and technologies to bring you the most current solutions.",
+        "We continuously invest in emerging technologies and industry best practices to ensure your solutions remain scalable and competitive in evolving markets.",
     },
   ];
 
@@ -46,7 +46,7 @@ const CoreValuesSection = () => {
             Our Core <span className="gradient-text">Values</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            The principles that guide everything we do and ensure exceptional results for every client.
+            The strategic principles that drive our approach and ensure consistent delivery of transformative business outcomes for our partners.
           </p>
         </div>
 

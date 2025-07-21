@@ -13,7 +13,7 @@ const AboutSection = () => {
                 Who <span className="gradient-text">We Are</span>
               </h2>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                We're a creative powerhouse dedicated to transforming ideas into stunning visual experiences. From startups to enterprises, we blend artistic vision with technical expertise to deliver solutions that not only look incredible but perform flawlessly.
+                We're a forward-thinking technology consultancy that specializes in transforming complex challenges into elegant digital solutions. Our multidisciplinary team combines strategic thinking, innovative design, and advanced engineering to deliver measurable results for businesses ready to scale.
               </p>
             </div>
 
@@ -22,7 +22,7 @@ const AboutSection = () => {
                 <LightBulbIcon className="w-8 h-8 text-[#B8860B] dark:text-[#FFD700] shrink-0" />
                 <div>
                   <p className="text-base sm:text-lg font-medium leading-relaxed text-muted-foreground">
-                    "Every pixel matters, every interaction counts, and every project deserves a unique approach."
+                    "We don't just build digital products—we architect experiences that drive growth, enhance user engagement, and deliver quantifiable business value."
                   </p>
                 </div>
               </div>

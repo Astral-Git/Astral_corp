@@ -55,24 +55,33 @@ const AppointmentBooking = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      toast({
-        title: "Appointment Request Sent!",
-        description: "We'll contact you within 24 hours to confirm your appointment.",
+      const response = await fetch('/api/appointments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        preferredDate: '',
-        preferredTime: '',
-        message: ''
-      });
+      if (response.ok) {
+        toast({
+          title: "Appointment Request Sent!",
+          description: "We'll contact you within 24 hours to confirm your appointment.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          preferredDate: '',
+          preferredTime: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to submit appointment');
+      }
       
     } catch (error) {
       toast({
@@ -98,10 +107,10 @@ const AppointmentBooking = () => {
             Book Your Free <span className="gradient-text">Consultation</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-            Ready to bring your vision to life? Schedule a free consultation with our team.
+            Transform your business vision into a strategic digital roadmap. Book a comprehensive consultation with our senior consultants.
           </p>
           <p className="text-lg text-gray-500 dark:text-gray-400">
-            No commitments, just great ideas and expert guidance.
+            No obligations—just expert insights, strategic recommendations, and a clear path forward.
           </p>
         </div>
 
@@ -167,12 +176,12 @@ const AppointmentBooking = () => {
                     <span>Service of Interest *</span>
                   </Label>
                   <Select onValueChange={(value) => handleSelectChange('service', value)} required>
-                    <SelectTrigger className="glass bg-white/50 dark:bg-gray-800/50 border-white/30 dark:border-gray-600/30 focus:border-[#B8860B] dark:focus:border-[#FFD700]">
+                    <SelectTrigger className="h-12 glass bg-white/50 dark:bg-gray-800/50 border-white/30 dark:border-gray-600/30 focus:border-[#B8860B] dark:focus:border-[#FFD700] transition-all duration-300 rounded-xl">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="rounded-xl">
                       {services.map((service) => (
-                        <SelectItem key={service} value={service}>
+                        <SelectItem key={service} value={service} className="cursor-pointer">
                           {service}
                         </SelectItem>
                       ))}
@@ -205,12 +214,12 @@ const AppointmentBooking = () => {
                     <span>Preferred Time</span>
                   </Label>
                   <Select onValueChange={(value) => handleSelectChange('preferredTime', value)}>
-                    <SelectTrigger className="glass bg-white/50 dark:bg-gray-800/50 border-white/30 dark:border-gray-600/30 focus:border-[#B8860B] dark:focus:border-[#FFD700]">
+                    <SelectTrigger className="h-12 glass bg-white/50 dark:bg-gray-800/50 border-white/30 dark:border-gray-600/30 focus:border-[#B8860B] dark:focus:border-[#FFD700] transition-all duration-300 rounded-xl">
                       <SelectValue placeholder="Select time slot" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="rounded-xl">
                       {timeSlots.map((time) => (
-                        <SelectItem key={time} value={time}>
+                        <SelectItem key={time} value={time} className="cursor-pointer">
                           {time}
                         </SelectItem>
                       ))}

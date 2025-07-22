@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X, ExternalLink, Github, Filter, Search } from "lucide-react";
-import ImageOptimized from "@/components/ImageOptimized";
 
 interface Project {
   id: number;

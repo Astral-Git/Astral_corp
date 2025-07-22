@@ -252,10 +252,15 @@ const Portfolio = () => {
   // Calculate dynamic column widths based on image sizes
   const getItemStyle = (project: Project) => {
     const data = imageData[project.id];
-    if (!data) return {};
-
     const maxWidth = 400;
     const minWidth = 280;
+    
+    if (!data) {
+      return {
+        width: `${minWidth}px`,
+        flexShrink: 0
+      };
+    }
     
     // Calculate width based on aspect ratio
     let width = data.aspectRatio > 1.2 ? maxWidth : minWidth;
@@ -272,10 +277,17 @@ const Portfolio = () => {
 
   const getImageStyle = (project: Project) => {
     const data = imageData[project.id];
-    if (!data) return { height: '240px' };
-
     const maxHeight = 320;
     const minHeight = 180;
+    const defaultHeight = 240;
+    
+    if (!data) {
+      return { 
+        height: `${defaultHeight}px`,
+        objectFit: 'cover' as const,
+        width: '100%'
+      };
+    }
     
     let height = Math.min(Math.max(minHeight, 300 / data.aspectRatio), maxHeight);
     
@@ -306,6 +318,11 @@ const Portfolio = () => {
                 src={project.image}
                 alt={project.title}
                 className="max-w-full max-h-96 object-contain rounded-xl shadow-lg"
+                loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400"><rect width="600" height="400" fill="%23f3f4f6"/><text x="50%" y="50%" text-anchor="middle" fill="%236b7280" font-size="16">Image unavailable</text></svg>`;
+                }}
               />
             </div>
             <h2 className="text-4xl font-space font-bold mb-4 text-gray-800 dark:text-white">
@@ -448,9 +465,8 @@ const Portfolio = () => {
         </div>
 
         {/* Dynamic Gallery */}
-        {imagesLoaded ? (
-          <div className="flex flex-wrap justify-center gap-6 mb-16" style={{ alignItems: 'flex-start' }}>
-            {filteredProjects.map((project) => (
+        <div className="flex flex-wrap justify-center gap-6 mb-16" style={{ alignItems: 'flex-start' }}>
+          {filteredProjects.map((project) => (
               <div
                 key={project.id}
                 className="group glass-card overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6C63FF]/20 dark:hover:shadow-[#FF6EC7]/20"
@@ -458,13 +474,16 @@ const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden">
-                  <ImageOptimized
+                  <img
                     src={project.image}
                     alt={`${project.title} - ${project.description}`}
-                    className="group-hover:scale-110 transition-transform duration-300"
-                    width={400}
-                    height={300}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full group-hover:scale-110 transition-transform duration-300"
+                    style={getImageStyle(project)}
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23f3f4f6"/><text x="50%" y="50%" text-anchor="middle" fill="%236b7280" font-size="14">Image unavailable</text></svg>`;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -495,12 +514,7 @@ const Portfolio = () => {
                 </div>
               </div>
             ))}
-          </div>
-        ) : (
-          <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#6C63FF] dark:border-[#FF6EC7]"></div>
-          </div>
-        )}
+        </div>
 
         {/* Client Logos */}
         <div className="mb-16">

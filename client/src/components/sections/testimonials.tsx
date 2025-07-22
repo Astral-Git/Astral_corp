@@ -110,12 +110,12 @@ export default function TestimonialsSection() {
         </h2>
 
         <div className="relative flex flex-col gap-6 overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:30s]">
+          <Marquee className="[--duration:25s]">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:35s]">
+          <Marquee reverse className="[--duration:30s]">
             {secondRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}

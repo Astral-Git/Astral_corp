@@ -2,12 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>ASTRAL Corp - Premium Digital Design & Development Services</title>
+    <meta name="title" content="ASTRAL Corp - Premium Digital Design & Development Services" />
+    <meta name="description" content="Transform your business with ASTRAL Corp's premium web development, UI/UX design, brand identity, 3D CAD modeling, and IoT engineering services. 180% ROI guaranteed." />
+    <meta name="keywords" content="web development, UI UX design, brand identity, 3D CAD modeling, IoT engineering, digital marketing, India, ASTRAL Corp" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="author" content="ASTRAL Corp" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://astralcorp.com/" />
+    <meta property="og:title" content="ASTRAL Corp - Premium Digital Design & Development Services" />
+    <meta property="og:description" content="Transform your business with ASTRAL Corp's premium web development, UI/UX design, brand identity, 3D CAD modeling, and IoT engineering services. 180% ROI guaranteed." />
+    <meta property="og:image" content="https://astralcorp.com/og-image.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="ASTRAL Corp" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://astralcorp.com/" />
+    <meta property="twitter:title" content="ASTRAL Corp - Premium Digital Design & Development Services" />
+    <meta property="twitter:description" content="Transform your business with ASTRAL Corp's premium web development, UI/UX design, brand identity, 3D CAD modeling, and IoT engineering services. 180% ROI guaranteed." />
+    <meta property="twitter:image" content="https://astralcorp.com/twitter-image.jpg" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ASTRAL Corp",
+      "url": "https://astralcorp.com",
+      "logo": "https://astralcorp.com/logo.png",
+      "description": "Premium digital design and development services including web development, UI/UX design, brand identity, 3D CAD modeling, and IoT engineering.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-xxx-xxx-xxxx",
+        "contactType": "customer service",
+        "email": "info.astralcorp@gmail.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/astralcorp",
+        "https://twitter.com/astralcorp"
+      ]
+    }
+    </script>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    
+    <!-- Icons and PWA -->
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#FFD700" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Performance hints -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//images.unsplash.com" />
+    
+    <!-- Critical CSS will be inlined by Vite -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

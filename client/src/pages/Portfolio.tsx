@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { X, ExternalLink, Github } from "lucide-react";
+import { X, ExternalLink, Github, Filter, Search } from "lucide-react";
+import ImageOptimized from "@/components/ImageOptimized";
 
 interface Project {
   id: number;
@@ -198,12 +199,18 @@ const categories = ["All", "Web Development", "Design", "Marketing", "3D/CAD", "
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [searchTerm, setSearchTerm] = useState("");
   const [imageData, setImageData] = useState<{[key: number]: {width: number, height: number, aspectRatio: number}}>({});
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects = projects.filter(project => {
+    const matchesCategory = selectedCategory === "All" || project.category === selectedCategory;
+    const matchesSearch = searchTerm === "" || 
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
 
   // Load image dimensions
   useEffect(() => {
@@ -400,6 +407,29 @@ const Portfolio = () => {
           </p>
         </div>
 
+        {/* Search and Filter Controls */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-between mb-8">
+            {/* Search Input */}
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <input
+                type="text"
+                placeholder="Search projects..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 transition-all"
+                aria-label="Search projects"
+              />
+            </div>
+            
+            {/* Results Count */}
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'} found
+            </div>
+          </div>
+        </div>
+
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
@@ -428,11 +458,13 @@ const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden">
-                  <img
+                  <ImageOptimized
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} - ${project.description}`}
                     className="group-hover:scale-110 transition-transform duration-300"
-                    style={getImageStyle(project)}
+                    width={400}
+                    height={300}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

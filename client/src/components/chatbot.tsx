@@ -125,12 +125,21 @@ const Chatbot = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-96 h-96 bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 z-40 flex flex-col overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white p-4 flex items-center space-x-3">
-            <Bot size={24} />
-            <div>
-              <h3 className="font-semibold">A.S.T.R.A.L Assistant</h3>
-              <p className="text-sm text-white/80">Ask me anything!</p>
+          <div className="bg-gradient-to-r from-[#B8860B] to-[#FFD700] text-white p-4 flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <Bot size={24} />
+              <div>
+                <h3 className="font-semibold">A.S.T.R.A.L Assistant</h3>
+                <p className="text-sm text-white/80">Ask me anything!</p>
+              </div>
             </div>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              aria-label="Close chat"
+            >
+              <X size={16} className="text-white" />
+            </button>
           </div>
 
           {/* Messages */}

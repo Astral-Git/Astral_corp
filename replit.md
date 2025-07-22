@@ -40,6 +40,10 @@ A modern glassmorphic portfolio website featuring neon aesthetics, originally bu
 - **2025-01-22**: Implemented advanced image optimization with lazy loading and responsive images
 - **2025-01-22**: Created vercel.json for security headers and proper caching strategies
 - **2025-01-22**: Added comprehensive accessibility features and semantic HTML structure
+- **2025-01-22**: Added side navigation menu to Portfolio page with smooth scrolling to category sections
+- **2025-01-22**: Enhanced chatbot with dedicated close button in header for better UX
+- **2025-01-22**: Implemented category-based sections in Portfolio with organized project display
+- **2025-01-22**: Fixed Portfolio page image display issues and React runtime errors
 
 ## Project Architecture
 ### Frontend

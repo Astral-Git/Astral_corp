@@ -413,6 +413,37 @@ const Portfolio = () => {
       </div>
 
       <div className="container mx-auto px-4">
+        {/* Navigation Menu */}
+        <div className="fixed left-8 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
+          <nav className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-2xl border border-white/30 dark:border-gray-600/30 p-2 shadow-lg">
+            <div className="flex flex-col space-y-2">
+              {categories.map((category, index) => (
+                <button
+                  key={category}
+                  onClick={() => {
+                    setSelectedCategory(category);
+                    const section = document.getElementById(`category-${category.toLowerCase().replace(/\s+/g, '-')}`);
+                    if (section) {
+                      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 text-left ${
+                    selectedCategory === category
+                      ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-md"
+                      : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  }`}
+                  title={category}
+                >
+                  <div className="flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-current opacity-60"></span>
+                    <span className="truncate">{category}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </nav>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-space font-bold mb-6 text-gray-800 dark:text-white">
@@ -463,57 +494,88 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Dynamic Gallery */}
-        <div className="flex flex-wrap justify-center gap-6 mb-16" style={{ alignItems: 'flex-start' }}>
-          {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group glass-card overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6C63FF]/20 dark:hover:shadow-[#FF6EC7]/20"
-                style={getItemStyle(project)}
-                onClick={() => setSelectedProject(project)}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={`${project.title} - ${project.description}`}
-                    className="w-full group-hover:scale-110 transition-transform duration-300"
-                    style={getImageStyle(project)}
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23f3f4f6"/><text x="50%" y="50%" text-anchor="middle" fill="%236b7280" font-size="14">Image unavailable</text></svg>`;
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Button className="w-full bg-white/20 backdrop-blur-lg text-white border border-white/30 hover:bg-white/30 rounded-full">
-                      View Case Study
-                    </Button>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-space font-semibold mb-3 text-gray-800 dark:text-white">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-[#6C63FF]/10 dark:bg-[#FF6EC7]/10 text-[#6C63FF] dark:text-[#FF6EC7] rounded-full text-sm font-medium"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+        {/* Category Sections */}
+        {categories.map((category) => {
+          const categoryProjects = filteredProjects.filter(p => 
+            category === 'All' || p.category === category
+          );
+          
+          if (categoryProjects.length === 0) return null;
+          
+          return (
+            <div key={category} id={`category-${category.toLowerCase().replace(/\s+/g, '-')}`} className="mb-20">
+              <div className="flex items-center justify-between mb-8">
+                <h2 className="text-3xl font-space font-bold text-gray-800 dark:text-white">
+                  {category}
+                  <span className="ml-3 text-sm text-gray-500 dark:text-gray-400 font-normal">
+                    ({categoryProjects.length} {categoryProjects.length === 1 ? 'project' : 'projects'})
+                  </span>
+                </h2>
+                <div className="h-px bg-gradient-to-r from-orange-500 to-transparent flex-1 ml-6"></div>
               </div>
-            ))}
-        </div>
+              
+              {/* Dynamic Gallery */}
+              <div className="flex flex-wrap justify-center gap-6 mb-8" style={{ alignItems: 'flex-start' }}>
+                {categoryProjects.map((project) => (
+                  <div
+                    key={project.id}
+                    className="group glass-card overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6C63FF]/20 dark:hover:shadow-[#FF6EC7]/20"
+                    style={getItemStyle(project)}
+                    onClick={() => setSelectedProject(project)}
+                  >
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={project.image}
+                        alt={`${project.title} - ${project.description}`}
+                        className="w-full group-hover:scale-110 transition-transform duration-300"
+                        style={getImageStyle(project)}
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23f3f4f6"/><text x="50%" y="50%" text-anchor="middle" fill="%236b7280" font-size="14">Image unavailable</text></svg>`;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <Button className="w-full bg-white/20 backdrop-blur-lg text-white border border-white/30 hover:bg-white/30 rounded-full">
+                          View Case Study
+                        </Button>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <h3 className="text-xl font-space font-semibold mb-3 text-gray-800 dark:text-white">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-3 py-1 bg-[#6C63FF]/10 dark:bg-[#FF6EC7]/10 text-[#6C63FF] dark:text-[#FF6EC7] rounded-full text-sm font-medium"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+        
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-20">
+            <div className="text-6xl mb-4 opacity-30">🔍</div>
+            <h3 className="text-2xl font-semibold text-gray-600 dark:text-gray-400 mb-2">No projects found</h3>
+            <p className="text-gray-500 dark:text-gray-500">Try adjusting your search terms or category filter.</p>
+          </div>
+        )}
 
         {/* Client Logos */}
         <div className="mb-16">

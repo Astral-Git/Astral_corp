@@ -55,33 +55,49 @@ const AppointmentBooking = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/appointments', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Frontend-only submission - save to localStorage and create email link
+      const appointmentData = {
+        ...formData,
+        timestamp: new Date().toISOString(),
+        id: Date.now().toString()
+      };
+
+      // Save to localStorage
+      const existingAppointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+      existingAppointments.push(appointmentData);
+      localStorage.setItem('appointments', JSON.stringify(existingAppointments));
+
+      // Create email mailto link
+      const emailSubject = `Appointment Request - ${formData.service}`;
+      const emailBody = `
+        Name: ${formData.name}
+        Email: ${formData.email}
+        Phone: ${formData.phone}
+        Service: ${formData.service}
+        Preferred Date: ${formData.preferredDate}
+        Preferred Time: ${formData.preferredTime}
+        Message: ${formData.message}
+      `;
+      const mailtoLink = `mailto:info.astralcorp@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Open email client
+      window.open(mailtoLink);
+
+      toast({
+        title: "Appointment Request Created!",
+        description: "Your email client has opened. Please send the email to complete your appointment request.",
       });
 
-      if (response.ok) {
-        toast({
-          title: "Appointment Request Sent!",
-          description: "We'll contact you within 24 hours to confirm your appointment.",
-        });
-
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          preferredDate: '',
-          preferredTime: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Failed to submit appointment');
-      }
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        preferredDate: '',
+        preferredTime: '',
+        message: ''
+      });
       
     } catch (error) {
       toast({

@@ -21,8 +21,28 @@ const ContactFormSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    // Frontend-only submission with email
+    const contactData = {
+      ...formData,
+      timestamp: new Date().toISOString(),
+    };
+    
+    // Save to localStorage
+    const existingContacts = JSON.parse(localStorage.getItem('contact_forms') || '[]');
+    existingContacts.push(contactData);
+    localStorage.setItem('contact_forms', JSON.stringify(existingContacts));
+
+    // Create mailto link
+    const emailSubject = `Contact Form Submission from ${formData.fullName}`;
+    const emailBody = `
+      Name: ${formData.fullName}
+      Email: ${formData.email}
+      Phone: ${formData.phone}
+      Location: ${formData.location}
+      Project Description: ${formData.projectDescription}
+    `;
+    const mailtoLink = `mailto:info.astralcorp@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    window.open(mailtoLink);
     
     setIsSubmitting(false);
     setIsSubmitted(true);

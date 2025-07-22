@@ -1,14 +1,33 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter signup
-    console.log("Newsletter signup:", email);
+    
+    // Save to localStorage
+    const newsletterData = {
+      email,
+      timestamp: new Date().toISOString(),
+    };
+    const existingSubscribers = JSON.parse(localStorage.getItem('newsletter_subscribers') || '[]');
+    existingSubscribers.push(newsletterData);
+    localStorage.setItem('newsletter_subscribers', JSON.stringify(existingSubscribers));
+
+    // Create mailto link for subscription notification
+    const mailtoLink = `mailto:info.astralcorp@gmail.com?subject=Newsletter Subscription&body=New newsletter subscription:%0D%0AEmail: ${encodeURIComponent(email)}%0D%0ADate: ${new Date().toLocaleDateString()}`;
+    window.open(mailtoLink);
+
+    toast({
+      title: "Newsletter Subscription",
+      description: "Your email client has opened to complete the subscription.",
+    });
+
     setEmail("");
   };
 
